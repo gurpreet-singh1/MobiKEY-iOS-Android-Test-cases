@@ -11,7 +11,7 @@ import java.net.URL;
 import java.net.MalformedURLException;
 import java.util.logging.Level;
 
-public class iosSoft_AddProxy extends JUnitTestReporter {
+public class iosSoft_AddProxy_AuthReq_SavePwd extends JUnitTestReporter {
     private String reportDirectory = "reports";
     private String reportFormat = "xml";
     private String testName = "Untitled";
@@ -33,7 +33,7 @@ public class iosSoft_AddProxy extends JUnitTestReporter {
 
     @Test
     public void Test() {
-    	driver.findElement(By.xpath("//*[@placeholder='Required' and (./preceding-sibling::* | ./following-sibling::*)[@text='Password:']]")).click();
+        driver.findElement(By.xpath("//*[@placeholder='Required']")).click();
     	driver.getKeyboard().sendKeys("Route123");
     	driver.findElement(By.xpath("//*[@text='arrow right']")).click();
     	
@@ -46,26 +46,16 @@ public class iosSoft_AddProxy extends JUnitTestReporter {
          driver.findElement(By.xpath("(//*[@class='UIAView' and ./parent::*[@class='UIAView' and ./parent::*[@text='Toolbar']]]/*[@class='UIAButton'])[4]")).click();
          driver.findElement(By.xpath("//*[@text='Proxy']")).click();
          driver.findElement(By.xpath("//*[@text='Add']")).click();
-         
          driver.findElement(By.xpath("(((//*[@text='MobiKEY']/*[@class='UIAWindow'])[1]/*/*/*[@class='UIAView' and ./parent::*[@class='UIAView' and (./preceding-sibling::* | ./following-sibling::*)[@class='UIAView'] and ./parent::*[@class='UIAView']]])[3]/*[@class='UIATextField'])[1]")).sendKeys("AutomatedProxy");
-         
-         
-         
-         //new WebDriverWait(driver, 10).until(ExpectedConditions.presenceOfElementLocated(By.xpath("(((//*[@text='MobiKEY']/*[@class='UIAWindow'])[1]/*/*/*[@class='UIAView' and ./parent::*[@class='UIAView' and (./preceding-sibling::* | ./following-sibling::*)[@class='UIAView'] and ./parent::*[@class='UIAView']]])[3]/*[@class='UIATextField'])[3]")));
-         driver.findElement(By.xpath("(((//*[@text='MobiKEY']/*[@class='UIAWindow'])[3]/*/*/*[@class='UIAView' and ./parent::*[@class='UIAView' and (./preceding-sibling::* | ./following-sibling::*)[@text='Address'] and ./parent::*[@class='UIAView']]])[3]/*[@class='UIATextField'])[3]")).sendKeys("192.168.205.230");
-         //new WebDriverWait(driver, 30).until(ExpectedConditions.presenceOfElementLocated(By.xpath("(((//*[@text='MobiKEY']/*[@class='UIAWindow'])[1]/*/*/*[@class='UIAView' and ./parent::*[@class='UIAView' and (./preceding-sibling::* | ./following-sibling::*)[@class='UIAView'] and ./parent::*[@class='UIAView']]])[3]/*[@class='UIATextField'])[4]")));
-         driver.findElement(By.xpath("(((//*[@text='MobiKEY']/*[@class='UIAWindow'])[4]/*/*/*[@class='UIAView' and ./parent::*[@class='UIAView' and (./preceding-sibling::* | ./following-sibling::*)[@text='Password'] and ./parent::*[@class='UIAView']]])[3]/*[@class='UIATextField'])[4]")).click();
-         driver.findElement(By.xpath("(((//*[@text='MobiKEY']/*[@class='UIAWindow'])[4]/*/*/*[@class='UIAView' and ./parent::*[@class='UIAView' and (./preceding-sibling::* | ./following-sibling::*)[@text='Domain'] and ./parent::*[@class='UIAView']]])[3]/*[@class='UIATextField'])[4]")).sendKeys("8080");
+         new WebDriverWait(driver, 10).until(ExpectedConditions.presenceOfElementLocated(By.xpath("(((//*[@text='MobiKEY']/*[@class='UIAWindow'])[1]/*/*/*[@class='UIAView' and ./parent::*[@class='UIAView' and (./preceding-sibling::* | ./following-sibling::*)[@class='UIAView'] and ./parent::*[@class='UIAView']]])[3]/*[@class='UIATextField'])[3]")));
+         driver.findElement(By.xpath("(((//*[@text='MobiKEY']/*[@class='UIAWindow'])[3]/*/*/*[@class='UIAView' and ./parent::*[@class='UIAView' and (./preceding-sibling::* | ./following-sibling::*)[@class='UIAView'] and ./parent::*[@class='UIAView']]])[3]/*[@class='UIATextField'])[3]")).sendKeys("192.168.205.230");
+         new WebDriverWait(driver, 30).until(ExpectedConditions.presenceOfElementLocated(By.xpath("(((//*[@text='MobiKEY']/*[@class='UIAWindow'])[1]/*/*/*[@class='UIAView' and ./parent::*[@class='UIAView' and (./preceding-sibling::* | ./following-sibling::*)[@class='UIAView'] and ./parent::*[@class='UIAView']]])[3]/*[@class='UIATextField'])[4]")));
+         driver.findElement(By.xpath("(((//*[@text='MobiKEY']/*[@class='UIAWindow'])[4]/*/*/*[@class='UIAView' and ./parent::*[@class='UIAView' and (./preceding-sibling::* | ./following-sibling::*)[@class='UIAView'] and ./parent::*[@class='UIAView']]])[3]/*[@class='UIATextField'])[4]")).click();
+         driver.findElement(By.xpath("(((//*[@text='MobiKEY']/*[@class='UIAWindow'])[4]/*/*/*[@class='UIAView' and ./parent::*[@class='UIAView' and (./preceding-sibling::* | ./following-sibling::*)[@class='UIAView'] and ./parent::*[@class='UIAView']]])[3]/*[@class='UIATextField'])[4]")).sendKeys("8080");
          driver.findElement(By.xpath("//*[@text='Save']")).click();
          driver.findElement(By.xpath("//*[@text='OK']")).click();
          driver.findElement(By.xpath("//*[@text='Close']")).click();
 
-         
-         driver.findElement(By.xpath("//*[@placeholder='Required' and (./preceding-sibling::* | ./following-sibling::*)[@text='Password:']]")).click();
-         
-         
-         
-         
     }
 
     @After

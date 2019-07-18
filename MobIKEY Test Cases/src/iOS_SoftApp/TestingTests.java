@@ -116,9 +116,23 @@ public class TestingTests {
         driver.findElement(By.xpath("//*[@text='Cancel']")).click();
         driver.executeScript("seetest:client.deviceAction(\"Home\")");
         driver.findElement(By.xpath("//*[@placeholder='Required' and (./preceding-sibling::* | ./following-sibling::*)[@text='Username:']]")).sendKeys("qqqqqqqq");
-
-
+        
+        
+        
+        
+        
+        
+        
+        
+        driver.findElement(By.xpath("(((//*[@text='MobiKEY']/*[@class='UIAWindow'])[1]/*/*/*[@class='UIAView' and ./parent::*[@class='UIAView' and (./preceding-sibling::* | ./following-sibling::*)[@class='UIAView'] and ./parent::*[@class='UIAView']]])[3]/*[@class='UIATextField'])[5]")).click();
+        driver.findElement(By.xpath("//*[@text='Empty list']")).click();
+        driver.findElement(By.xpath("(((//*[@text='MobiKEY']/*[@class='UIAWindow'])[1]/*/*/*[@class='UIAView' and ./parent::*[@class='UIAView' and (./preceding-sibling::* | ./following-sibling::*)[@class='UIAView'] and ./parent::*[@class='UIAView']]])[3]/*[@class='UIATextField'])[6]")).click();
+        driver.findElement(By.xpath("(((//*[@text='MobiKEY']/*[@class='UIAWindow'])[1]/*/*/*[@class='UIAView' and ./parent::*[@class='UIAView' and (./preceding-sibling::* | ./following-sibling::*)[@class='UIAView'] and ./parent::*[@class='UIAView']]])[3]/*[@text='0'])[2]")).click();
+        driver.findElement(By.xpath("//*[@text='Close']")).click();
     }
+
+
+    
 
     @After
     public void tearDown() {
