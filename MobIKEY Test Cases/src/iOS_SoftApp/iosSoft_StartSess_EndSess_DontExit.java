@@ -33,34 +33,43 @@ public class iosSoft_StartSess_EndSess_DontExit extends JUnitTestReporter {
 
     @Test
     public void testUntitled() {
-    	//Session 1
+    	//Login
     	driver.findElement(By.xpath("//*[@placeholder='Required' and (./preceding-sibling::* | ./following-sibling::*)[@text='Password:']]")).click();
     	driver.getKeyboard().sendKeys("Route123");
     	driver.findElement(By.xpath("//*[@text='arrow right']")).click();
     	
+    	//1st Session
     	new WebDriverWait(driver, 30).until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@class='UIAView' and ./*[@text='Online']]")));
     	driver.findElement(By.xpath("//*[@text='Online']")).click();
-    	new WebDriverWait(driver, 30).until(ExpectedConditions.presenceOfElementLocated(By.xpath("(//*[@class='UIAView' and ./parent::*[@class='UIAView' and ./parent::*[@text='Toolbar']]]/*[@class='UIAButton'])[1]")));
-    	driver.findElement(By.xpath("(//*[@class='UIAView' and ./parent::*[@class='UIAView' and ./parent::*[@text='Toolbar']]]/*[@class='UIAButton'])[1]")).click();
-    	
-        try {
-    	    Thread.sleep(5000);
+    	try {
+    	    Thread.sleep(30000);
     	} catch(InterruptedException e) {
     	    System.out.println("got interrupted!");
     	}
+    	new WebDriverWait(driver, 30).until(ExpectedConditions.presenceOfElementLocated(By.xpath("(//*[@class='UIAView' and ./parent::*[@class='UIAView' and ./parent::*[@text='Toolbar']]]/*[@class='UIAButton'])[1]")));
+        driver.findElement(By.xpath("(//*[@class='UIAView' and ./parent::*[@class='UIAView' and ./parent::*[@text='Toolbar']]]/*[@class='UIAButton'])[1]")).click();
         
-        new WebDriverWait(driver, 30).until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@class='UIAView' and ./*[@text='Online']]")));
+        try {
+        	Thread.sleep(8000);
+        } catch(InterruptedException e) {
+        	System.out.println("Got interrupted");
+        }
+        
+        //2nd Session
+    	new WebDriverWait(driver, 30).until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@class='UIAView' and ./*[@text='Online']]")));
     	driver.findElement(By.xpath("//*[@text='Online']")).click();
-    	new WebDriverWait(driver, 30).until(ExpectedConditions.presenceOfElementLocated(By.xpath("(//*[@class='UIAView' and ./parent::*[@class='UIAView' and ./parent::*[@text='Toolbar']]]/*[@class='UIAButton'])[1]")));
-    	driver.findElement(By.xpath("(//*[@class='UIAView' and ./parent::*[@class='UIAView' and ./parent::*[@text='Toolbar']]]/*[@class='UIAButton'])[1]")).click();
-    	
-        try {
-    	    Thread.sleep(5000);
+    	try {
+    	    Thread.sleep(30000);
     	} catch(InterruptedException e) {
     	    System.out.println("got interrupted!");
     	}
-        
-        
+    	new WebDriverWait(driver, 20).until(ExpectedConditions.presenceOfElementLocated(By.xpath("(//*[@class='UIAView' and ./parent::*[@class='UIAView' and ./parent::*[@text='Toolbar']]]/*[@class='UIAButton'])[1]")));
+        driver.findElement(By.xpath("(//*[@class='UIAView' and ./parent::*[@class='UIAView' and ./parent::*[@text='Toolbar']]]/*[@class='UIAButton'])[1]")).click();
+        try {
+    	    Thread.sleep(8000);
+    	} catch(InterruptedException e) {
+    	    System.out.println("got interrupted!");
+    	}
      
     }
     
