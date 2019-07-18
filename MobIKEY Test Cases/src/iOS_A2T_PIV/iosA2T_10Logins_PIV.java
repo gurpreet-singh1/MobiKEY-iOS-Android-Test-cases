@@ -42,6 +42,7 @@ public class iosA2T_10Logins_PIV extends JUnitTestReporter {
     	driver.findElement(By.xpath("//*[@placeholder='Required' and (./preceding-sibling::* | ./following-sibling::*)[@text='PIN:']]")).click();
     	driver.getKeyboard().sendKeys("123456");
     	driver.findElement(By.xpath("//*[@text='arrow right']")).click();
+    	
     	try {
     	    Thread.sleep(10000);
     	} catch(InterruptedException e) {
