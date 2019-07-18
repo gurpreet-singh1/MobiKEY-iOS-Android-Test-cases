@@ -37,12 +37,12 @@ public class iosSoft_SessionWithOfflineHost extends JUnitTestReporter {
     	driver.getKeyboard().sendKeys("Route123");
     	driver.findElement(By.xpath("//*[@text='arrow right']")).click();
     	try {
-    	new WebDriverWait(driver, 12).until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@class='UIAView' and ./*[@text='Offline']]")));
+    	new WebDriverWait(driver, 10).until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@class='UIAView' and ./*[@text='Offline']]")));
     	driver.findElement(By.xpath("//*[@text='Offline']")).click();
     	} catch (Exception e) {
     		System.out.println("There doesn't seem to be an offline host. Please stop the service on your host and restart the test.");
     	}
-    	new WebDriverWait(driver, 5).until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@class='UIAView' and ./*[@text='Offline']]")));
+    	new WebDriverWait(driver, 2).until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@class='UIAView' and ./*[@text='Offline']]")));
 
     }
     
