@@ -25,7 +25,7 @@ public class iosSoft_16Bit_Session extends JUnitTestReporter {
         dc.setCapability("reportFormat", reportFormat);
         dc.setCapability("testName", testName);
         dc.setCapability("deviceName", "iOS");
-       //dc.setCapability(MobileCapabilityType.UDID, "9d3a55d43a66a42977cfec941f6d729524330902");
+//       dc.setCapability(MobileCapabilityType.UDID, "9d3a55d43a66a42977cfec941f6d729524330902");
         dc.setCapability(IOSMobileCapabilityType.BUNDLE_ID, "com.route1.r1MobiKEY");
         driver = new IOSDriver<>(new URL("http://localhost:4723/wd/hub"), dc);
         driver.setLogLevel(Level.INFO);
