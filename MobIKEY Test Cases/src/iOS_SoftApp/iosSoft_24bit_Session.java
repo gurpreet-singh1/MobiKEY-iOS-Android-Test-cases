@@ -47,7 +47,7 @@ public class iosSoft_24bit_Session extends JUnitTestReporter {
     	    System.out.println("got interrupted!");
     	}
     	
-    	 driver.findElement(By.xpath("(//*[@class='UIAView' and ./parent::*[@class='UIAView' and ./parent::*[@text='Toolbar']]]/*[@class='UIAButton'])[4]")).click();
+    	 driver.findElement(By.xpath("(//*[@class='UIAView' and ./parent::*[@class='UIAView' and ./parent::*[@text='Toolbar']]]/*[@class='UIAButton'])[4]")).click();	
          driver.findElement(By.xpath("//*[@text='24-bit']")).click();
          driver.findElement(By.xpath("(//*[@class='UIAView' and ./parent::*[@class='UIAView' and ./parent::*[@text='Toolbar']]]/*[@class='UIAButton'])[4]")).click();
 

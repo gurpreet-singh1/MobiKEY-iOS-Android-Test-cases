@@ -1,5 +1,8 @@
 package iOS_SoftApp;
 import io.appium.java_client.remote.IOSMobileCapabilityType;
+import io.appium.*;
+import io.appium.java_client.*;
+import io.appium.java_client.ios.*;
 import io.appium.java_client.ios.IOSDriver;
 import io.appium.java_client.ios.IOSElement;
 import io.appium.java_client.TouchAction;
@@ -13,6 +16,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebElement;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.interactions.touch.TouchActions;
 import org.junit.*;
@@ -20,6 +24,8 @@ import java.net.URL;
 import java.net.MalformedURLException;
 import java.util.HashMap;
 import java.util.logging.Level;
+
+@SuppressWarnings("rawtypes")
 
 public class iosSoft_viewLogFile_sendLogFIle {
     private String reportDirectory = "reports";
@@ -81,24 +87,27 @@ public class iosSoft_viewLogFile_sendLogFIle {
         
         
         
-       driver.findElement(By.xpath("(//*[@class='UIAView' and ./parent::*[@class='UIAView' and ./parent::*[@text='Toolbar']]]/*[@class='UIAButton'])[4]")).click();
+       driver.findElement(By.xpath("(//*[@class='UIAView' and ./parent::*[@class='UIAView' and ./parent::*[@text='Toolbar']]]/*[@class='UIAButton'])[3]")).click();
        driver.findElement(By.xpath("//*[@text='Troubleshooting']")).click();
        
        
        
        
-       
-       new TouchAction(driver).press(PointOption.point(500, 596)).waitAction(WaitOptions.waitOptions(Duration.ofMillis(1000))).
-       moveTo(PointOption.point(518, 478)).release().perform();
-       driver.findElement(By.xpath("//*[@contains(text='Today)]")).click();
-       
-       
- //      driver.findElement(By.xpath("//contains[@text='Yesterday at']")).click();
+//       
+//     //  new TouchAction(driver).press(PointOption.point(500, 596)).waitAction(WaitOptions.waitOptions(Duration.ofMillis(1000))).
+//    //   moveTo(PointOption.point(518, 478)).release().perform();
+//  //     driver.findElement(By.xpath("//*[@contains(text='Today)]")).click();
+//       
+//       
+//       driver.findElement(By.xpath("//contains[@text='Yesterday at']")).click();
 //       TouchActions action = new TouchActions(driver);
 //       action.scroll(10, 100);
 //       action.perform();
        
-//       action.scroll(952, 383).waitAction(Duration.ofMillis(626)).moveTo(952, 283).release().perform();
+       
+       TouchAction touchAction = new TouchAction(driver);
+       touchAction.tap(PointOption.point(1519, 745)).perform();
+       
 
 //       driver.findElement(By.xpath("//*[@text='Today at']")).click();
 //       driver.findElement(By.xpath("//*[@text='View']")).click();
