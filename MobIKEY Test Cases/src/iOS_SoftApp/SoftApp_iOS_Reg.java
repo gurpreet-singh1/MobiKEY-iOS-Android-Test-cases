@@ -52,17 +52,20 @@ public class SoftApp_iOS_Reg extends JUnitTestReporter {
         driver.findElement(By.xpath("//*[@placeholder='Required' and (./preceding-sibling::* | ./following-sibling::*)[@text='Retype password:']]")).sendKeys("Route123");
         new WebDriverWait(driver, 30).until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@text='arrow right']")));
         driver.findElement(By.xpath("//*[@text='arrow right']")).click();
-//        try {
-//    	    Thread.sleep(10000);
-//    	} catch(InterruptedException e) {
-//    	    System.out.println("got interrupted!");
-//    	}
-        new WebDriverWait(driver, 30).until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*contains[@text='You are currently not associated with any hosts.']")));
+        try {
+    	    Thread.sleep(10000);
+    	} catch(InterruptedException e) {
+    	    System.out.println("got interrupted!");
+    	}
+        
+//        new WebDriverWait(driver, 30).until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*contains[@text='You are currently not associated with any hosts.']")));
+        
+        System.out.println("Registration successful!");
     }
 
     @After
     public void tearDown() {
         driver.quit();
-        System.out.println("Registration successful!");
+        
     }
 }
