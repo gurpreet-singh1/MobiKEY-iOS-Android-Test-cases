@@ -63,10 +63,26 @@ import org.junit.runner.notification.Failure;
 	        new WebDriverWait(driver, 10).until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@id='menu_settings']")));
 	        driver.findElement(By.xpath("//*[@id='menu_settings']")).click();
 	    //Add new proxy profile
-	        driver.findElement(By.xpath("//*[@class='android.widget.RelativeLayout' and ./*[@text='Proxy12']]")).click();
+	        driver.findElement(By.xpath("//*[@class='android.widget.RelativeLayout' and ./*[@text='Proxy']]")).click();
+	        
+	        
+	        try 
+	        {
+	        if (driver.findElement(By.xpath("//*[@text='Automated Proxy (192.168.205.230)']")).isDisplayed()) 
+	        {
+	        	driver.findElement(By.xpath("//*[@text='Edit']")).click();
+	            driver.findElement(By.xpath("//*[@text='Delete']")).click();
+	            driver.findElement(By.xpath("//*[@text='Done']")).click();
+	        }
+	        }
+	        catch (Exception e)
+	        {
+	        	System.out.println("Good to go!");
+	        }
+	        
 	        driver.findElement(By.xpath("//*[@text='Add']")).click();
 	        driver.findElement(By.xpath("//*[@id='settings_proxy_settings_profile_name_text']")).click();
-	        driver.findElement(By.xpath("//*[@id='settings_proxy_settings_profile_name_text']")).sendKeys("AutomatedProxy");
+	        driver.findElement(By.xpath("//*[@id='settings_proxy_settings_profile_name_text']")).sendKeys("Automated Proxy");
 	        driver.findElement(By.xpath("//*[@id='settings_proxy_settings_address_text']")).click();
 	        driver.findElement(By.xpath("//*[@id='settings_proxy_settings_address_text']")).sendKeys("192.168.205.230");
 	        driver.findElement(By.xpath("//*[@id='settings_proxy_settings_port_text']")).click();
@@ -81,25 +97,26 @@ import org.junit.runner.notification.Failure;
 	        new WebDriverWait(driver, 30).until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@id='close_button']")));
 	        driver.findElement(By.xpath("//*[@id='close_button']")).click();
 	        new WebDriverWait(driver, 30).until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@text='Yes']")));
-	        driver.findElement(By.xpath("//*[@1text='Yes']")).click();
+	        driver.findElement(By.xpath("//*[@text='Yes']")).click();
 	        new WebDriverWait(driver, 30).until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@text='Refresh List']")));
+	        driver.findElement(By.xpath("//*[@text='Refresh List']")).click();
 	        
-	       
-	        //profile will be removed (Android bug, where only one proxy can be added)
-	        new WebDriverWait(driver, 10).until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@id='menu_settings']")));
-	        driver.findElement(By.xpath("//*[@id='menu_settings']")).click();
-	        driver.findElement(By.xpath("//*[@class='android.widget.RelativeLayout' and ./*[@text='Proxy']]")).click();
-	        driver.findElement(By.xpath("//*[@text='Edit']")).click();
-	        driver.findElement(By.xpath("//*[@text='Delete']")).click();
-	        driver.findElement(By.xpath("//*[@text='Done']")).click();
-	        driver.navigate().back();
+	       try {Thread.sleep(5000);} catch(Exception e) {}
 	        
+//	       
+//	        //profile will be removed (Android bug, where only one proxy can be added)
+//	        new WebDriverWait(driver, 10).until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@id='menu_settings']")));
+//	        driver.findElement(By.xpath("//*[@id='menu_settings']")).click();
+//	        driver.findElement(By.xpath("//*[@class='android.widget.RelativeLayout' and ./*[@text='Proxy']]")).click();
+//	        driver.findElement(By.xpath("//*[@text='Edit']")).click();
+//	        driver.findElement(By.xpath("//*[@text='Delete']")).click();
+//	        driver.findElement(By.xpath("//*[@text='Done']")).click();
+//	        driver.navigate().back();
+//	        
 	    }
 
     @After
 	public void tearDown() {
-	        driver.closeApp();
-	        driver.quit();
 	    }
 }
 

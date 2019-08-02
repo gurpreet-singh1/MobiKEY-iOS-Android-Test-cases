@@ -59,12 +59,11 @@ import java.util.logging.Level;
         driver.findElement(By.xpath("//*[@id='close_button']")).click();
         new WebDriverWait(driver, 30).until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@text='Yes']")));
         driver.findElement(By.xpath("//*[@text='Yes']")).click();
-        new WebDriverWait(driver, 30).until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@text='Refresh List']")));
-        driver.closeApp();
+        new WebDriverWait(driver, 30).until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@text='Online']")));
     }
 
     @After
     public void tearDown() {
-        driver.quit();
+        driver.closeApp();
     }
 }
