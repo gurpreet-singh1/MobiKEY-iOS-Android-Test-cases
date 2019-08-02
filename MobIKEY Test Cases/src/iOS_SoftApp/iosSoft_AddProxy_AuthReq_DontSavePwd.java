@@ -1,12 +1,9 @@
 package iOS_SoftApp;
 import io.appium.java_client.remote.IOSMobileCapabilityType;
 import io.appium.java_client.touch.offset.PointOption;
-import jdk.internal.org.jline.utils.Log;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.ios.IOSDriver;
 import io.appium.java_client.ios.IOSElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.By;
 import org.junit.*;
@@ -14,7 +11,8 @@ import java.net.URL;
 import java.net.MalformedURLException;
 import java.util.logging.Level;
 
-@SuppressWarnings("rawtypes")
+@SuppressWarnings({"rawtypes", "unused"})
+
 
 public class iosSoft_AddProxy_AuthReq_DontSavePwd extends JUnitTestReporter {
     private String reportDirectory = "reports";
@@ -61,40 +59,46 @@ public class iosSoft_AddProxy_AuthReq_DontSavePwd extends JUnitTestReporter {
             driver.findElement(By.xpath("//*[@text='Done']")).click();
         }
         }
-        catch (Exception gurpreet)
+        catch (Exception e)
         {
         	System.out.println("Good to go!");
         }
         
         driver.findElement(By.xpath("//*[@text='Add']")).click();
-		TouchAction touchAction = new TouchAction(driver);
-        touchAction.tap(PointOption.point(748, 274)).perform();
-        driver.getKeyboard().sendKeys("Automated Proxy");
-        driver.findElement(By.xpath("//*[@text='Hide keyboard']")).click();
-        
-        TouchAction touchAction1 = new TouchAction(driver);
-        touchAction1.tap(PointOption.point(746, 492)).perform();
-        driver.getKeyboard().sendKeys("192.168.205.230");
-        driver.findElement(By.xpath("//*[@text='Hide keyboard']")).click();
-        
-        TouchAction touchAction2 = new TouchAction(driver);
-        touchAction2.tap(PointOption.point(746, 562)).perform();
-        driver.getKeyboard().sendKeys("8080");
-        driver.findElement(By.xpath("//*[@text='Hide keyboard']")).click();
 
         
+        driver.findElement(By.xpath("(//*[@class='UIATextField' and (./preceding-sibling::* | ./following-sibling::*)[@text='Address']])[1]")).click();
+        driver.getKeyboard().sendKeys("Automated Proxy");
+        driver.findElement(By.xpath("(//*[@class='UIATextField' and (./preceding-sibling::* | ./following-sibling::*)[@text='Address']])[3]")).click();
+        driver.getKeyboard().sendKeys("192.168.205.230");
+        driver.findElement(By.xpath("(//*[@class='UIATextField' and (./preceding-sibling::* | ./following-sibling::*)[@text='Address']])[4]")).click();
+        driver.getKeyboard().sendKeys("8080");
         
+        driver.findElement(By.xpath("(//*[@class='UIATextField' and (./preceding-sibling::* | ./following-sibling::*)[@text='User Name']])[5]")).click();
+        driver.getKeyboard().sendKeys("test");
+        driver.findElement(By.xpath("(//*[@class='UIAView' and (./preceding-sibling::* | ./following-sibling::*)[@text='Password']])")).click();
+        driver.getKeyboard().sendKeys("test");
+        driver.findElement(By.xpath("(//*[@class='UIATextField' and (./preceding-sibling::* | ./following-sibling::*)[@text='Domain']])[6]")).click();
+        driver.getKeyboard().sendKeys("route1");
         
+       // driver.findElement(By.xpath("(((//*[@text='MobiKEY']/*[@class='UIAWindow'])[1]/*/*/*[@class='UIAView' and ./parent::*[@class='UIAView' and (./preceding-sibling::* | ./following-sibling::*)[@class='UIAView'] and ./parent::*[@class='UIAView']]])[3]/*[@text='0'])[2]")).click();
+   
         
-        
-//        driver.findElement(By.xpath("//*[@text='MobiKEY' and (./preceding-sibling::* | ./following-sibling::*)[@text='Profile Name']]")).click();
-//        driver.findElement(By.xpath("(((//*[@text='MobiKEY']/*[@class='UIAWindow'])[1]/*/*/*[@class='UIAView' and ./parent::*[@class='UIAView' and (./preceding-sibling::* | ./following-sibling::*)[@text='Profile Name'] and ./parent::*[@class='UIAView']]])[3]/*[@class='UIATextField'])[1]")).sendKeys("automatedproxy");
-//        new WebDriverWait(driver, 30).until(ExpectedConditions.presenceOfElementLocated(By.xpath("(((//*[@text='MobiKEY']/*[@class='UIAWindow'])[1]/*/*/*[@class='UIAView' and ./parent::*[@class='UIAView' and (./preceding-sibling::* | ./following-sibling::*)[@class='UIAView'] and ./parent::*[@class='UIAView']]])[3]/*[@class='UIATextField'])[3]")));
-//        driver.findElement(By.xpath("(((//*[@text='MobiKEY']/*[@class='UIAWindow'])[1]/*/*/*[@class='UIAView' and ./parent::*[@class='UIAView' and (./preceding-sibling::* | ./following-sibling::*)[@class='UIAView'] and ./parent::*[@class='UIAView']]])[3]/*[@class='UIATextField'])[3]")).sendKeys("192.168.205.230");
-//        new WebDriverWait(driver, 30).until(ExpectedConditions.presenceOfElementLocated(By.xpath("(((//*[@text='MobiKEY']/*[@class='UIAWindow'])[1]/*/*/*[@class='UIAView' and ./parent::*[@class='UIAView' and (./preceding-sibling::* | ./following-sibling::*)[@class='UIAView'] and ./parent::*[@class='UIAView']]])[3]/*[@class='UIATextField'])[4]")));
-//        driver.findElement(By.xpath("(((//*[@text='MobiKEY']/*[@class='UIAWindow'])[1]/*/*/*[@class='UIAView' and ./parent::*[@class='UIAView' and (./preceding-sibling::* | ./following-sibling::*)[@class='UIAView'] and ./parent::*[@class='UIAView']]])[3]/*[@class='UIATextField'])[4]")).click();
+//		  TouchAction touchAction = new TouchAction(driver);
+//        touchAction.tap(PointOption.point(748, 274)).perform();
+//        driver.getKeyboard().sendKeys("Automated Proxy");
+//        driver.findElement(By.xpath("//*[@text='Hide keyboard']")).click();
+//        
+//        TouchAction touchAction1 = new TouchAction(driver);
+//        touchAction1.tap(PointOption.point(746, 492)).perform();
+//        driver.getKeyboard().sendKeys("192.168.205.230");
+//        driver.findElement(By.xpath("//*[@text='Hide keyboard']")).click();
+//        
+//        TouchAction touchAction2 = new TouchAction(driver);
+//        touchAction2.tap(PointOption.point(746, 562)).perform();
 //        driver.getKeyboard().sendKeys("8080");
-        
+//        driver.findElement(By.xpath("//*[@text='Hide keyboard']")).click();
+
         
         driver.findElement(By.xpath("//*[@text='Save']")).click();
         driver.findElement(By.xpath("//*[@text='OK']")).click();

@@ -23,6 +23,7 @@ import org.junit.*;
 import java.net.URL;
 import java.net.MalformedURLException;
 import java.util.HashMap;
+import java.util.Map;
 import java.util.logging.Level;
 
 @SuppressWarnings("rawtypes")
@@ -46,7 +47,8 @@ public class iosSoft_viewLogFile_sendLogFIle {
         driver.setLogLevel(Level.INFO);
     }
 
-    @Test
+    @SuppressWarnings("unchecked")
+	@Test
     public void testUntitled() {
     	
     	//Login
@@ -68,7 +70,7 @@ public class iosSoft_viewLogFile_sendLogFIle {
         driver.findElement(By.xpath("//*[@text='Debug']")).click();
         driver.findElement(By.xpath("(//*[@class='UIAView' and ./parent::*[@class='UIAView' and ./parent::*[@text='Toolbar']]]/*[@class='UIAButton'])[3]")).click();
        
-    	
+        
     	
     	//Refresh Host list to generate a log file.
         
@@ -81,75 +83,29 @@ public class iosSoft_viewLogFile_sendLogFIle {
         }
     	
     	
-    	//View a Host File
-    	
-       
-        
-        
-        
+        //send a Log File
        driver.findElement(By.xpath("(//*[@class='UIAView' and ./parent::*[@class='UIAView' and ./parent::*[@text='Toolbar']]]/*[@class='UIAButton'])[3]")).click();
        driver.findElement(By.xpath("//*[@text='Troubleshooting']")).click();
+       //scroll down
+       Map<String, Object> args = new HashMap<>();
+       args.put("direction", "down");
+       driver.executeScript("mobile: scroll", args);
+       driver.findElement(By.xpath("//*[contains(@text, 'Today at')]")).click();
+       
+       driver.findElement(By.xpath("//*[@text='Send']")).click();
+       driver.findElement(By.xpath("//*[@accessibilityLabel='toField']")).click();
+       driver.executeScript("seetest:client.deviceAction(\"BKSP\")");
+       driver.executeScript("seetest:client.deviceAction(\"BKSP\")");
+       driver.getKeyboard().sendKeys("gurpreet.singh@groupmobile.com");
+       driver.getKeyboard().sendKeys("\n");
+       driver.findElement(By.xpath("//*[@text='Send']")).click();
        
        
-       
-       
-//       
-//     //  new TouchAction(driver).press(PointOption.point(500, 596)).waitAction(WaitOptions.waitOptions(Duration.ofMillis(1000))).
-//    //   moveTo(PointOption.point(518, 478)).release().perform();
-//  //     driver.findElement(By.xpath("//*[@contains(text='Today)]")).click();
-//       
-//       
-//       driver.findElement(By.xpath("//contains[@text='Yesterday at']")).click();
-//       TouchActions action = new TouchActions(driver);
-//       action.scroll(10, 100);
-//       action.perform();
-       
-       
-       TouchAction touchAction = new TouchAction(driver);
-       touchAction.tap(PointOption.point(1519, 745)).perform();
-       
-
-//       driver.findElement(By.xpath("//*[@text='Today at']")).click();
-//       driver.findElement(By.xpath("//*[@text='View']")).click();
-//       try {
-//    	   Thread.sleep(6000);
-//       } catch (InterruptedException e) {
-//    	   
-//       }
-//       driver.findElement(By.xpath("(//*[@class='UIAView' and ./parent::*[@class='UIAView' and ./parent::*[@text='Toolbar']]]/*[@class='UIAButton'])[3]")).click();
-    	
-    	
-    	//Send a Host File
-//    	driver.findElement(By.xpath("//*[@text='Today at 12:53:28']")).click();
-//        driver.findElement(By.xpath("//*[@text='Send']")).click();
-//
-//        driver.findElement(By.xpath("//*[@accessibilityLabel='toField']")).click();
-//        driver.executeScript("seetest:client.deviceAction(\"BKSP\")");
-//        driver.getKeyboard().sendKeys("qa@route1.com");
-//        driver.findElement(By.xpath("//*[@text='b']")).click();
-//
-//        driver.findElement(By.xpath("//*[@text='Send']")).click();
-        
-        
-        
-        
-      /*
-    	
-        driver.findElement(By.xpath("//*[@text='Troubleshooting']")).click();
-
-        driver.findElement(By.xpath("//*[@text='Debug']")).click();
-        driver.findElement(By.xpath("//*[@class='UIATable' and ./*[./*[@text='Online']]]")).click();
-        driver.findElement(By.xpath("//*[@text='Refresh List']")).click();
-
-        driver.findElement(By.xpath("(//*[@class='UIAView' and ./parent::*[@class='UIAView' and ./parent::*[@text='Toolbar']]]/*[@class='UIAButton'])[3]")).click();
-        driver.findElement(By.xpath("//*[@text='Troubleshooting']")).click();
-
-        driver.findElement(By.xpath("//*[contains(@text='Today at 12:53:28')]")).click();
-        driver.findElement(By.xpath("//*[@text='View']")).click();
-
-        driver.findElement(By.xpath("//*[@class='UIATable' and ./*[./*[@text='Online']]]")).click();
-        
-        driver.findElement(By.xpath("//*[@text='Delete Draft']")).click(); */
+       //View Log File
+       driver.findElement(By.xpath("//*[contains(@text, 'Today at')]")).click();
+       driver.findElement(By.xpath("//*[@text='View']")).click();
+       driver.findElement(By.xpath("//*[@text='MobiKEY']")).click();
+ 
     }
 
     @After
