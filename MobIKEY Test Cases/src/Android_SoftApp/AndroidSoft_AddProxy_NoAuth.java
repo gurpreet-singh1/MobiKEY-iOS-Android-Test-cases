@@ -98,10 +98,8 @@ import org.junit.runner.notification.Failure;
 	        driver.findElement(By.xpath("//*[@id='close_button']")).click();
 	        new WebDriverWait(driver, 30).until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@text='Yes']")));
 	        driver.findElement(By.xpath("//*[@text='Yes']")).click();
-	        new WebDriverWait(driver, 30).until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@text='Refresh List']")));
-	        driver.findElement(By.xpath("//*[@text='Refresh List']")).click();
 	        
-	       try {Thread.sleep(5000);} catch(Exception e) {}
+	       try {Thread.sleep(10000);} catch(Exception e) {}
 	        
 //	       
 //	        //profile will be removed (Android bug, where only one proxy can be added)
@@ -117,6 +115,8 @@ import org.junit.runner.notification.Failure;
 
     @After
 	public void tearDown() {
+    	driver.quit();
+    	driver.closeApp();
 	    }
 }
 
