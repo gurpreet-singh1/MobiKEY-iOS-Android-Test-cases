@@ -74,6 +74,5 @@ public class AndroidSoft_Registration extends JUnitTestReporter {
 
     @After
     public void tearDown() {
-        driver.quit();
     }
 }

@@ -109,6 +109,67 @@ import java.util.logging.Level;
         new WebDriverWait(driver, 30).until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@text='Yes']")));
         driver.findElement(By.xpath("//*[@text='Yes']")).click();
         new WebDriverWait(driver, 30).until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@text='Refresh List']")));
+        
+        ((AndroidDriver<?>) driver).launchApp();
+        driver.findElement(By.xpath("//*[@id='password']")).sendKeys("Route123");
+        driver.findElement(By.xpath("//*[@text='Login']")).click();
+        new WebDriverWait(driver, 10).until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@text='Online']")));
+        driver.findElement(By.xpath("//*[@text='Online']")).click();
+        new WebDriverWait(driver, 30).until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@id='close_button']")));
+        driver.findElement(By.xpath("//*[@id='close_button']")).click();
+        new WebDriverWait(driver, 30).until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@text='Yes']")));
+        driver.findElement(By.xpath("//*[@text='Yes']")).click();
+        new WebDriverWait(driver, 30).until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@text='Refresh List']")));
+        ((AndroidDriver<?>) driver).closeApp();
+        
+        
+        ((AndroidDriver<?>) driver).launchApp();
+        driver.findElement(By.xpath("//*[@id='password']")).sendKeys("Route123");
+        driver.findElement(By.xpath("//*[@text='Login']")).click();
+        new WebDriverWait(driver, 10).until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@text='Online']")));
+        driver.findElement(By.xpath("//*[@text='Online']")).click();
+        new WebDriverWait(driver, 30).until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@id='close_button']")));
+        driver.findElement(By.xpath("//*[@id='close_button']")).click();
+        new WebDriverWait(driver, 30).until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@text='Yes']")));
+        driver.findElement(By.xpath("//*[@text='Yes']")).click();
+        new WebDriverWait(driver, 30).until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@text='Refresh List']")));
+        ((AndroidDriver<?>) driver).closeApp();
+        
+        
+        ((AndroidDriver<?>) driver).launchApp();
+        driver.findElement(By.xpath("//*[@id='password']")).sendKeys("Route123");
+        driver.findElement(By.xpath("//*[@text='Login']")).click();
+        new WebDriverWait(driver, 10).until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@text='Online']")));
+        driver.findElement(By.xpath("//*[@text='Online']")).click();
+        new WebDriverWait(driver, 30).until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@id='close_button']")));
+        driver.findElement(By.xpath("//*[@id='close_button']")).click();
+        new WebDriverWait(driver, 30).until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@text='Yes']")));
+        driver.findElement(By.xpath("//*[@text='Yes']")).click();
+        new WebDriverWait(driver, 30).until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@text='Refresh List']")));
+        ((AndroidDriver<?>) driver).closeApp();
+        
+        
+        ((AndroidDriver<?>) driver).launchApp();
+        driver.findElement(By.xpath("//*[@id='password']")).sendKeys("Route123");
+        driver.findElement(By.xpath("//*[@text='Login']")).click();
+        new WebDriverWait(driver, 10).until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@text='Online']")));
+        driver.findElement(By.xpath("//*[@text='Online']")).click();
+        new WebDriverWait(driver, 30).until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@id='close_button']")));
+        driver.findElement(By.xpath("//*[@id='close_button']")).click();
+        new WebDriverWait(driver, 30).until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@text='Yes']")));
+        driver.findElement(By.xpath("//*[@text='Yes']")).click();
+        new WebDriverWait(driver, 30).until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@text='Refresh List']")));
+        
+        ((AndroidDriver<?>) driver).launchApp();
+        driver.findElement(By.xpath("//*[@id='password']")).sendKeys("Route123");
+        driver.findElement(By.xpath("//*[@text='Login']")).click();
+        new WebDriverWait(driver, 10).until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@text='Online']")));
+        driver.findElement(By.xpath("//*[@text='Online']")).click();
+        new WebDriverWait(driver, 30).until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@id='close_button']")));
+        driver.findElement(By.xpath("//*[@id='close_button']")).click();
+        new WebDriverWait(driver, 30).until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@text='Yes']")));
+        driver.findElement(By.xpath("//*[@text='Yes']")).click();
+        new WebDriverWait(driver, 30).until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@text='Refresh List']")));
     }
 
     @After
