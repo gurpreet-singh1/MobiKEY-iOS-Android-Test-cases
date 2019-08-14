@@ -53,7 +53,7 @@ public class AndroidSoft_Registration extends JUnitTestReporter {
 
     @Test
     public void testUntitled() {
-        driver.findElement(By.xpath("//*[@id='password']")).sendKeys("Route123");
+        driver.findElement(By.xpath("//*[@id='password']")).sendKeys("Route321");
         driver.findElement(By.xpath("//*[@text='Login']")).click();
         new WebDriverWait(driver, 10).until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@id='menu_settings']")));
         driver.findElement(By.xpath("//*[@id='menu_settings']")).click();
