@@ -72,7 +72,6 @@ import org.junit.runner.notification.Failure;
 	        driver.closeApp();
 	        
 	        driver.launchApp();
-	        
 	        	new WebDriverWait(driver, 10).until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@id='mobinet_username']")));
 	        driver.findElement(By.xpath("//*[@id='mobinet_username']")).sendKeys("yyyyyyyy");
 	        driver.findElement(By.xpath("//*[@id='mobinet_user_password']")).sendKeys("yyyyyyyy");

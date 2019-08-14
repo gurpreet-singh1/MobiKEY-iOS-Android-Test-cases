@@ -16,7 +16,7 @@ import java.net.URL;
 import java.net.MalformedURLException;
 import java.util.logging.Level;
 
-	public class AndroidSoft_8bit_Session extends JUnitTestReporter {
+	public class AndroidSoft_DebugLog_DataSession extends JUnitTestReporter {
     private String reportDirectory = "reports";
     private String reportFormat = "xml";
     private String testName = "SoftApp.Android.StartSess.EndSess";
@@ -34,7 +34,7 @@ import java.util.logging.Level;
         dc.setCapability(AndroidMobileCapabilityType.APP_PACKAGE, "com.route1.mobi.android");
         dc.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY, ".activities.LaunchingActivity");
         dc.setCapability(MobileCapabilityType.NO_RESET, true);
-        driver = new AndroidDriver<>(new URL("http://localhost:4723/wd/hub"), dc);
+        driver = new AndroidDriver<>(new URL("http://0.0.0.0:4723/wd/hub"), dc);
         driver.setLogLevel(Level.WARNING);
     }
 
@@ -43,14 +43,13 @@ import java.util.logging.Level;
     @Test
 
     public void testSoftApp_Android_StartSess_EndSess() {
-      //  driver.findElement(By.xpath("//*[@text='MobiKEY']")).click();
-      //  new WebDriverWait(driver, 30).until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@id='password']")));
+    	new WebDriverWait(driver, 30).until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@id='password']")));
         driver.findElement(By.xpath("//*[@id='password']")).sendKeys("Route123");
         driver.findElement(By.xpath("//*[@text='Login']")).click();
         new WebDriverWait(driver, 30).until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@text='Refresh List']")));
         driver.findElement(By.xpath("//*[@id='menu_settings']")).click();
         driver.findElement(By.xpath("//*[@text='Troubleshooting']")).click();
-        driver.findElement(By.xpath("//*[@text='Error']")).click();
+        driver.findElement(By.xpath("//*[@text='Debug']")).click();
         driver.navigate().back();
         new WebDriverWait(driver, 10).until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@text='Online']")));
         driver.findElement(By.xpath("//*[@text='Online']")).click();

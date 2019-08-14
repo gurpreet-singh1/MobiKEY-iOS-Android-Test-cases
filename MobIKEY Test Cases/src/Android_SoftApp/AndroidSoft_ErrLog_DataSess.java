@@ -16,7 +16,7 @@ import java.net.URL;
 import java.net.MalformedURLException;
 import java.util.logging.Level;
 
-	public class AndroidSoft_8bit_Session extends JUnitTestReporter {
+	public class AndroidSoft_ErrLog_DataSess extends JUnitTestReporter {
     private String reportDirectory = "reports";
     private String reportFormat = "xml";
     private String testName = "SoftApp.Android.StartSess.EndSess";
@@ -43,8 +43,7 @@ import java.util.logging.Level;
     @Test
 
     public void testSoftApp_Android_StartSess_EndSess() {
-      //  driver.findElement(By.xpath("//*[@text='MobiKEY']")).click();
-      //  new WebDriverWait(driver, 30).until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@id='password']")));
+    	new WebDriverWait(driver, 30).until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@id='password']")));
         driver.findElement(By.xpath("//*[@id='password']")).sendKeys("Route123");
         driver.findElement(By.xpath("//*[@text='Login']")).click();
         new WebDriverWait(driver, 30).until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@text='Refresh List']")));
