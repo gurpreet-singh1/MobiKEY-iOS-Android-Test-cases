@@ -39,8 +39,7 @@ public class iosPurebred_10Logins extends JUnitTestReporter {
     @Test
     public void testUntitled() {
     	//1
-    	new WebDriverWait(driver, 30).until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@placeholder='Required' and (./preceding-sibling::* | ./following-sibling::*)[@text='Password:']]")));
-    	driver.findElement(By.xpath("//*[@placeholder='Required' and (./preceding-sibling::* | ./following-sibling::*)[@text='Password:']]")).click();
+    	driver.findElement(By.xpath("//*[@place holder='Required' and (./preceding-sibling::* | ./following-sibling::*)[@text='Password:']]")).click();
     	driver.getKeyboard().sendKeys("password");
     	driver.findElement(By.xpath("//*[@text='arrow right']")).click();
     	try {

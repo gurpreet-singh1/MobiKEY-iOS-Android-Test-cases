@@ -1,5 +1,4 @@
 package ios_Purebred;
-//package <set your test package>;
 import io.appium.java_client.remote.IOSMobileCapabilityType;
 import io.appium.java_client.ios.IOSDriver;
 import io.appium.java_client.ios.IOSElement;
@@ -13,6 +12,7 @@ import java.net.URL;
 import java.net.MalformedURLException;
 import java.util.logging.Level;
 
+@SuppressWarnings("unused")
 public class Purebred_ImportCerts {
     private String reportDirectory = "reports";
     private String reportFormat = "xml";

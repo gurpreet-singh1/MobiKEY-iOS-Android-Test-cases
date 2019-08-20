@@ -15,8 +15,7 @@ import java.net.URL;
 import java.net.MalformedURLException;
 import java.util.logging.Level;
 
-
-public class iosPurebred_16Bit_Session extends JUnitTestReporter {
+public class iosPurebred_V1Session extends JUnitTestReporter {
     private String reportDirectory = "reports";
     private String reportFormat = "xml";
     private String testName = "Untitled";
@@ -37,20 +36,15 @@ public class iosPurebred_16Bit_Session extends JUnitTestReporter {
 
     @Test
     public void testUntitled() {
-    	//1
+    	
+    	
     	new WebDriverWait(driver, 30).until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@placeholder='Required' and (./preceding-sibling::* | ./following-sibling::*)[@text='Password:']]")));
     	driver.findElement(By.xpath("//*[@placeholder='Required' and (./preceding-sibling::* | ./following-sibling::*)[@text='Password:']]")).click();
     	driver.getKeyboard().sendKeys("password");
     	driver.findElement(By.xpath("//*[@text='arrow right']")).click();
-    	try {
-    	    Thread.sleep(15000);
-    	} catch(InterruptedException e) {
-    	    System.out.println("got interrupted!");
-    	}
-    	//driver.findElement(By.xpath("//*[@class='UIAView' and @height>0 and ./*[@text='MobiKEY'] and ./*[@class='UIAButton']]")).click();
+    	try {Thread.sleep(15000);} catch(Exception e) {};
         driver.findElement(By.xpath("(//*[@class='UIAView' and ./parent::*[@class='UIAView' and ./parent::*[@text='Toolbar']]]/*[@class='UIAButton'])[3]")).click();
-        driver.findElement(By.xpath("//*[@text='16-bit']")).click();
-        //driver.findElement(By.xpath("(//*[@class='UIAView' and ./parent::*[@class='UIAView' and ./parent::*[@text='Toolbar']]]/*[@class='UIAButton'])[4]")).click();
+        driver.findElement(By.xpath("//*[@text='V1']")).click();
         driver.findElement(By.xpath("(//*[@class='UIAView' and ./parent::*[@class='UIAView' and ./parent::*[@text='Toolbar']]]/*[@class='UIAButton'])[4]")).click();
 
     	
@@ -69,6 +63,7 @@ public class iosPurebred_16Bit_Session extends JUnitTestReporter {
     	} catch(InterruptedException e) {
     	    System.out.println("got interrupted!");
     	}
+    	
     }
 
     @After
